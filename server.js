@@ -23,6 +23,13 @@ app.use("/api/v2/", authMiddleware, allowedRoles("admin", "staff"), staffRouter)
 app.use("/api/v3/", authMiddleware, allowedRoles("doctor"), doctorRouter);
 app.use("/api/v4/", authMiddleware, allowedRoles("admin"), adminRouter);
 
+app.get("/", (req, res) => {
+    res.status(200).send({
+        success: true,
+        message: "Welcome to the Hospital Management System"
+    })
+})
+
 
 const PORT = process.env.PORT
 app.listen(PORT, () => {
