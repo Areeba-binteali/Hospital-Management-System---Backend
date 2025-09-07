@@ -8,6 +8,7 @@ const staffRouter = require("./routes/staffRoutes");
 const doctorRouter = require("./routes/doctorRoutes");
 const adminRouter = require("./routes/adminRoutes");
 const allowedRoles = require("./middleware/allowedRoles");
+const cors = require("cors");
 const authMiddleware = require("./middleware/authMiddleware");
 
 const app = express();
